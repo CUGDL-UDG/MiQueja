@@ -253,11 +253,11 @@
         }
 
         /* Nuevos estilos para inputs */
-        input[type="text"], select, textarea {
+        input[type="text"], input[type="password"], select, textarea {
             transition: all 0.2s ease;
             background-color: #f8fafc;
         }
-        input[type="text"]:focus, select:focus, textarea:focus {
+        input[type="text"]:focus, input[type="password"]:focus, select:focus, textarea:focus {
             --tw-ring-color: var(--primary-light);
             box-shadow: 0 0 0 2px var(--primary-light);
             background-color: white;
@@ -322,19 +322,19 @@
         </nav>
 
         <!-- Área de Sesión -->
-        <div id="content-sesion" class="hidden">
+        <div id="content-sesion" class="">
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 flex items-center gap-3">
                 <i data-lucide="user" class="w-8 h-8 text-gray-500"></i> Iniciar Sesión
             </h2>
-            <div class="card bg-white max-w-lg mx-auto">
+            <div id="login-form-container" class="card bg-white max-w-lg mx-auto">
                 <form id="login-form" onsubmit="handleLogin(event)">
                     <div class="mb-6">
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-                        <input type="text" id="email" name="email" placeholder="tu@correo.com" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-teal-400 shadow-sm">
+                        <input type="text" id="email" name="email" placeholder="tu@correo.com" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-teal-400 shadow-sm" value="demo@cugdl.udg.mx">
                     </div>
                     <div class="mb-6">
                         <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
-                        <input type="password" id="password" name="password" placeholder="••••••••" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-teal-400 shadow-sm">
+                        <input type="password" id="password" name="password" placeholder="••••••••" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-teal-400 shadow-sm" value="user">
                     </div>
                     <button type="submit" id="login-button" class="mt-4 w-full bg-gradient-to-r from-teal-500 to-emerald-600 text-white p-3 rounded-xl font-bold text-lg hover:from-teal-600 hover:to-emerald-700 transition duration-300 shadow-lg shadow-teal-500/30 flex items-center justify-center">
                         <span>Iniciar Sesión</span>
@@ -364,10 +364,10 @@
                         <i id="register-spinner" class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-6 w-6 ml-3 hidden"></i>
                     </button>
                     <div id="register-status-message" class="mt-4 text-center font-medium hidden p-3 rounded-lg"></div>
-                </form>
+                 </form>
                  <p class="text-center text-gray-500 text-sm mt-6">
                     ¿Ya tienes cuenta? <a href="#" class="font-medium text-teal-600 hover:text-teal-700" onclick="toggleRegister(event)">Inicia Sesión</a>
-                </p>
+                 </p>
             </div>
         </div>
 
@@ -379,8 +379,8 @@
                 <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     Esta es una plataforma ciudadana para compartir y consultar experiencias sobre el transporte público en Guadalajara. Tu opinión es <strong>anónima y ayuda a construir un panorama real y transparente</strong> del servicio.
                 </p>
-            </div>
-            <div class="mt-8">
+             </div>
+             <div class="mt-8">
                 <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center">¿Cómo funciona?</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Item -->
@@ -394,45 +394,45 @@
                     <!-- Item -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                          <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <i data-lucide="award" class="w-7 h-7"></i>
-                        </div>
+                            <i data-lucide="award" class="w-7 h-7"></i>
+                         </div>
                         <h4 class="font-bold text-lg text-gray-800 mb-1">2. Consulta el Ranking</h4>
                         <p class="text-gray-600 text-sm">Descubre las rutas mejor y peor valoradas.</p>
                     </div>
                     <!-- Item -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <i data-lucide="message-square-text" class="w-7 h-7"></i>
-                        </div>
+                            <i data-lucide="message-square-text" class="w-7 h-7"></i>
+                         </div>
                         <h4 class="font-bold text-lg text-gray-800 mb-1">3. Lee Comentarios</h4>
                         <p class="text-gray-600 text-sm">Explora opiniones y sugerencias de otros usuarios.</p>
                     </div>
                      <!-- Item -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                          <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <i data-lucide="map" class="w-7 h-7"></i>
-                        </div>
+                            <i data-lucide="map" class="w-7 h-7"></i>
+                         </div>
                         <h4 class="font-bold text-lg text-gray-800 mb-1">4. Explora el Mapa</h4>
                         <p class="text-gray-600 text-sm">Ubica rutas principales y sus calificaciones.</p>
                     </div>
                     <!-- Item -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <i data-lucide="route" class="w-7 h-7"></i>
-                        </div>
+                            <i data-lucide="route" class="w-7 h-7"></i>
+                         </div>
                         <h4 class="font-bold text-lg text-gray-800 mb-1">5. Directorio de Rutas</h4>
                         <p class="text-gray-600 text-sm">Accede a un listado organizado de todas las rutas.</p>
                     </div>
                     <!-- Item -->
                     <div class="bg-white p-6 rounded-xl border border-gray-100 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                          <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                           <i data-lucide="area-chart" class="w-7 h-7"></i>
-                        </div>
+                            <i data-lucide="area-chart" class="w-7 h-7"></i>
+                         </div>
                         <h4 class="font-bold text-lg text-gray-800 mb-1">6. Analiza Gráficas</h4>
                         <p class="text-gray-600 text-sm">Visualiza promedios de calificación por categoría.</p>
                     </div>
                 </div>
-            </div>
+             </div>
         </div>
 
         <!-- Área de Calificación -->
@@ -524,7 +524,7 @@
              <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center gap-3"><i data-lucide="map" class="w-8 h-8 text-red-500"></i> Mapa de Rutas Principales</h2>
              <p class="text-gray-600 mb-6">
                 Visualiza las rutas de Mi Tren y Mi Macro. Haz clic en una ruta para ver su información y calificación promedio.
-            </p>
+             </p>
             <div id="map"></div>
         </div>
         
@@ -534,7 +534,7 @@
             <div class="space-y-8">
                 <!-- Mi Tren -->
                 <div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-gray-50 rounded-2xl border-l-8 border-red-500">
-                    <img src="https://placehold.co/200x150/ef4444/ffffff?text=Mi+Tren&font=poppins" alt="Mi Tren" class="w-full md:w-48 rounded-lg shadow-md object-cover">
+                    <img src="https://placehold.co/200x150/ef4444/ffffff?text=Mi+Tren&font=poppins" alt="Mi Tren" class="w-full md:w-48 h-full object-cover rounded-lg shadow-md">
                     <div class="flex-1">
                         <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="train-front" class="w-7 h-7 mr-2 text-red-600"></i> Mi Tren</h3>
                         <p class="text-gray-600 mb-3">El sistema de tren ligero eléctrico que conecta puntos clave de la ciudad de forma rápida y eficiente.</p>
@@ -547,7 +547,7 @@
                 </div>
                 <!-- Mi Macro -->
                 <div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-gray-50 rounded-2xl border-l-8 border-blue-500">
-                    <img src="https://placehold.co/200x150/3b82f6/ffffff?text=Mi+Macro&font=poppins" alt="Mi Macro" class="w-full md:w-48 rounded-lg shadow-md object-cover">
+                    <img src="https://placehold.co/200x150/3b82f6/ffffff?text=Mi+Macro&font=poppins" alt="Mi Macro" class="w-full md:w-48 h-full object-cover rounded-lg shadow-md">
                     <div class="flex-1">
                         <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="bus-front" class="w-7 h-7 mr-2 text-blue-600"></i> Mi Macro</h3>
                         <p class="text-gray-600 mb-3">Sistema de autobús de tránsito rápido (BRT) con carriles exclusivos para mayor velocidad y capacidad.</p>
@@ -558,875 +558,682 @@
                     </div>
                 </div>
                 <!-- Mi Transporte (Autobuses) -->
-                <div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-gray-50 rounded-2xl border-l-8 border-emerald-500">
-                    <img src="https://placehold.co/200x150/10b981/ffffff?text=Mi+Transporte&font=poppins" alt="Mi Transporte" class="w-full md:w-48 rounded-lg shadow-md object-cover">
+                <div class="flex flex-col md:flex-row items-center gap-6 p-6 bg-gray-50 rounded-2xl border-l-8 border-green-500">
+                    <img src="https://placehold.co/200x150/22c55e/ffffff?text=Mi+Transporte&font=poppins" alt="Mi Transporte" class="w-full md:w-48 h-full object-cover rounded-lg shadow-md">
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="bus" class="w-7 h-7 mr-2 text-emerald-600"></i> Mi Transporte (Autobuses)</h3>
-                        <p class="text-gray-600 mb-3">La red de autobuses urbanos que cubre la mayor parte de la ciudad con rutas Troncales, Complementarias y Alimentadoras.</p>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2 flex items-center"><i data-lucide="bus" class="w-7 h-7 mr-2 text-green-600"></i> Mi Transporte (Rutas)</h3>
+                        <p class="text-gray-600 mb-3">La red de autobuses urbanos que cubre la mayor parte del área metropolitana.</p>
+                        <ul class="space-y-1 text-sm text-gray-700 font-medium list-disc list-inside">
+                            <li><span class="font-semibold text-gray-700">Rutas T (Troncales):</span> Ejes viales principales.</li>
+                            <li><span class="font-semibold text-gray-700">Rutas C (Complementarias):</span> Conectan colonias y barrios.</li>
+                            <li><span class="font-semibold text-gray-700">Rutas A (Alimentadoras):</span> Conectan con Mi Tren y Mi Macro.</li>
+                        </ul>
                     </div>
-                </div>
-                <div>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-3 text-center text-lg">Troncales (T)</h4>
-                            <div class="bus-routes-list" id="troncales-list"></div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-3 text-center text-lg">Complementarias (C)</h4>
-                            <div class="bus-routes-list" id="complementarias-list"></div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-3 text-center text-lg">Alimentadoras (A)</h4>
-                            <div class="bus-routes-list" id="alimentadoras-list"></div>
-                        </div>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-4 text-center">Haz clic en una ruta para ver su descripción. Para detalles completos del derrotero, consulta fuentes oficiales.</p>
                 </div>
             </div>
         </div>
 
         <!-- Área de Gráficas -->
         <div id="content-analytics" class="hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 flex items-center gap-3">
-                <i data-lucide="bar-chart-big" class="w-8 h-8 text-sky-500"></i> Análisis de Calificaciones
-            </h2>
-            <p class="text-gray-600 mb-10">
-                Estas gráficas muestran la calificación general promedio para las rutas de cada tipo de transporte, basadas en los datos recopilados de la comunidad.
-            </p>
-            <div class="space-y-12">
-                <div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">Mi Tren</h3>
-                    <div class="p-4 bg-gray-50 rounded-xl"><canvas id="tren-chart"></canvas></div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">Mi Macro</h3>
-                    <div class="p-4 bg-gray-50 rounded-xl"><canvas id="macro-chart"></canvas></div>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">Rutas Troncales (T)</h3>
-                    <div class="p-4 bg-gray-50 rounded-xl"><canvas id="troncales-chart"></canvas></div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">Rutas Complementarias (C)</h3>
-                     <div class="p-4 bg-gray-50 rounded-xl"><canvas id="complementarias-chart"></canvas></div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">Rutas Alimentadoras (A)</h3>
-                    <div class="p-4 bg-gray-50 rounded-xl"><canvas id="alimentadoras-chart"></canvas></div>
-                </div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 flex items-center gap-3"><i data-lucide="bar-chart-3" class="w-8 h-8 text-sky-500"></i> Analíticas Comunitarias</h2>
+             <p class="text-gray-600 mb-6 text-center">
+                Visualiza el promedio de calificaciones en aspectos clave, basado en todas las opiniones de los usuarios.
+             </p>
+            <div class="card bg-white">
+                <canvas id="ratingsChart"></canvas>
             </div>
         </div>
 
-        <!-- Área de Sesión -->
-        <div id="content-sesion" class="hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-4 flex items-center gap-3">
-                <i data-lucide="user" class="w-8 h-8 text-gray-500"></i> Iniciar Sesión
-            </h2>
-            <div class="card bg-white text-center">
-                <p class="text-gray-600">
-                    La funcionalidad de inicio de sesión no está implementada en esta versión de demostración.
-                </p>
-                <p class="text-gray-500 text-sm mt-4">
-                    En una versión futura, aquí podrías ver tu perfil y gestionar tus calificaciones.
-                </p>
-                <div class="mt-8">
-                    <button class="bg-gray-200 text-gray-500 px-6 py-2 rounded-full font-semibold cursor-not-allowed">Iniciar Sesión (Deshabilitado)</button>
-                </div>
-            </div>
-        </div>
+    </div> <!-- Fin de #app-content -->
 
-    </div>
-
-    <!-- Route Details Modal -->
-    <div id="route-modal" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center p-4 z-[9999] hidden transition-opacity duration-300">
-        <div id="modal-content-box" class="bg-white rounded-2xl shadow-xl p-6 w-full max-w-md relative">
-            <button onclick="closeRouteModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors">
-                <i data-lucide="x" class="w-7 h-7"></i>
-            </button>
-            <h3 id="modal-route-title" class="text-2xl font-bold text-teal-700 mb-2 pr-10"></h3>
-            <p id="modal-route-desc" class="text-gray-600">Información no disponible.</p>
-        </div>
-    </div>
-
-            <!-- Lógica de la Aplicación (sin Firebase) -->
+    <!--
+    /////////////////////////////////////////////////////////////////////
+    // INICIO DEL CÓDIGO JAVASCRIPT
+    // Todo el "motor" de la aplicación está aquí.
+    /////////////////////////////////////////////////////////////////////
+    -->
     <script>
+        // Variables globales
+        let currentTab = 'sesion';
+        let leafletMap;
+        let ratingsChart;
+        let selectedRatings = {}; // Almacena las estrellas seleccionadas
+        const ratingCategories = [
+            { id: 'limpieza', name: 'Limpieza de la Unidad' },
+            { id: 'puntualidad', name: 'Puntualidad / Frecuencia' },
+            { id: 'conduccion', name: 'Calidad de Conducción' },
+            { id: 'amabilidad', name: 'Amabilidad del Conductor' },
+            { id: 'seguridad', name: 'Seguridad en el Viaje' },
+            { id: 'espacio', name: 'Espacio / Ocupación' }
+        ];
+
+        // --- DATOS DE DEMOSTRACIÓN ---
+        // Lista de rutas para autocompletar
+        const allRoutes = [
+            'Línea 1', 'Línea 2', 'Línea 3', 'Macro Calzada', 'Macro Periférico',
+            'T01', 'T02', 'T03', 'T04A', 'T04B', 'T05', 'T06', 'T07', 'T08', 'T09', 'T10',
+            'C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10',
+            'C11', 'C12', 'C13', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', 'C20',
+            'C123', 'C124', 'C125', 'C126', 'C127', 'C128', 'C129', 'C130',
+            'A01', 'A02', 'A03', 'A04', 'A05', 'A06', 'A07'
+        ];
+
+        // Datos de demo para el Ranking
+        const demoRankingData = [
+            { id: 'tren-l3', route: 'Mi Tren - Línea 3', type: 'tren', rating: 4.8, votes: 120 },
+            { id: 'macro-peri', route: 'Mi Macro Periférico', type: 'macro', rating: 4.5, votes: 95 },
+            { id: 'tren-l1', route: 'Mi Tren - Línea 1', type: 'tren', rating: 4.2, votes: 150 },
+            { id: 'bus-t02', route: 'T02', type: 'bus-t', rating: 3.9, votes: 88 },
+            { id: 'bus-c123', route: 'C123', type: 'bus-c', rating: 3.5, votes: 45 },
+            { id: 'macro-calzada', route: 'Mi Macro Calzada', type: 'macro', rating: 3.2, votes: 210 },
+            { id: 'bus-c01', route: 'C01', type: 'bus-c', rating: 2.8, votes: 76 },
+            { id: 'bus-t04a', route: 'T04A', type: 'bus-t', rating: 2.5, votes: 132 },
+            { id: 'bus-a06', route: 'A06', type: 'bus-a', rating: 2.2, votes: 30 },
+            { id: 'tren-l2', route: 'Mi Tren - Línea 2', type: 'tren', rating: 2.1, votes: 190 }
+        ];
+
+        // Datos de demo para Comentarios
+        const demoCommentsData = [
+            { id: '1', route: 'Mi Tren - Línea 3', type: 'tren', rating: 5, comment: 'Súper limpia y rápida. Siempre la uso para ir a Zapopan y es una maravilla.', time: 'hace 2 horas' },
+            { id: '2', route: 'T04A', type: 'bus-t', rating: 2, comment: 'El conductor manejaba como loco, frenando y acelerando. Además, la unidad venía muy sucia.', time: 'hace 5 horas' },
+            { id: '3', route: 'Mi Macro Calzada', type: 'macro', rating: 3, comment: 'Muy lento hoy, tardó más de 20 minutos en pasar y venía llenísimo. Imposible subirse.', time: 'hace 1 día' },
+            { id: '4', route: 'C123', type: 'bus-c', rating: 4, comment: 'Unidad nueva y con aire acondicionado. El conductor fue muy amable.', time: 'hace 2 días' },
+            { id: '5', route: 'Mi Macro Periférico', type: 'macro', rating: 5, comment: 'La mejor inversión que han hecho. Me ahorra 30 minutos diarios.', time: 'hace 2 días' }
+        ];
+
+        // --- INICIALIZACIÓN DE LA APP ---
         document.addEventListener('DOMContentLoaded', () => {
-            let map; // Variable global para el mapa
-            let mapInitialized = false;
-            let mapLayers = {}; // Objeto para guardar las capas del mapa
-            let isAuthenticated = false; // Estado de autenticación
+            // Reemplazar todos los íconos de Lucide
+            lucide.createIcons();
 
-            // --- Variables Globales y Datos de Ejemplo ---
-            let currentRatings = {};
-            let currentCommentFilter = 'all';
-            let currentRankingFilter = 'all';
-            let fullRankingList = [];
-            let charts = {}; // Para guardar las instancias de las gráficas
+            // Ocultar la animación de bienvenida después del tiempo
+            setTimeout(() => {
+                document.getElementById('welcome-animation').classList.add('hidden');
+            }, 4400); // Un poco antes de que la app aparezca
+
+            // Inicializar la pestaña por defecto (Sesión)
+            switchTab(currentTab);
+
+            // Generar los campos de calificación
+            generateRatingFields();
+
+            // Configurar listeners para el formulario de calificación
+            setupRatingFormListeners();
+
+            // Configurar listeners para el autocompletado
+            setupAutocomplete();
+        });
+
+        // --- LÓGICA DE NAVEGACIÓN (PESTAÑAS) ---
+        function switchTab(tabId) {
+            // Ocultar contenido actual
+            const currentContent = document.getElementById(`content-${currentTab}`);
+            if (currentContent) {
+                currentContent.classList.add('hidden');
+            }
+            // Quitar 'active' del botón actual
+            const currentButton = document.getElementById(`tab-${currentTab}`);
+            if (currentButton) {
+                currentButton.classList.remove('active');
+            }
+
+            // Mostrar nuevo contenido
+            const newContent = document.getElementById(`content-${tabId}`);
+            if (newContent) {
+                newContent.classList.remove('hidden');
+                newContent.classList.add('section-animation');
+            }
+            // Poner 'active' en el nuevo botón
+            const newButton = document.getElementById(`tab-${tabId}`);
+            if (newButton) {
+                newButton.classList.add('active');
+            }
+
+            // Actualizar pestaña actual
+            currentTab = tabId;
+
+            // Lógica específica al abrir una pestaña
+            if (tabId === 'map') {
+                initMap();
+            } else if (tabId === 'analytics') {
+                initAnalytics();
+            } else if (tabId === 'ranking') {
+                filterAndDisplayRanking('all'); // Mostrar todos por defecto
+            } else if (tabId === 'comments') {
+                filterAndDisplayComments('all'); // Mostrar todos por defecto
+            }
+        }
+
+        // --- LÓGICA DE SESIÓN Y REGISTRO ---
+        function toggleRegister(e) {
+            e.preventDefault();
+            const loginForm = document.getElementById('login-form-container');
+            const registerForm = document.getElementById('register-form-container');
             
-            // Datos de ejemplo para simular la base de datos
-            let allCommunityRatings = [
-                { Timestamp: new Date(), Tipo_Transporte: 'tren-l3', Linea_Ruta: 'L3', Limpieza: 5, Puntualidad_Frecuencia: 5, Amabilidad_Conductor: 4, Efectividad: 5, Calificacion_General: 4.75, Comentario: 'La línea 3 es muy rápida y limpia, excelente servicio.' },
-                { Timestamp: new Date(), Tipo_Transporte: 'bus-t', Linea_Ruta: 'T01', Limpieza: 3, Puntualidad_Frecuencia: 2, Amabilidad_Conductor: 4, Efectividad: 3, Calificacion_General: 3.0, Comentario: 'El T01 pasa muy lleno y a veces se tarda más de la cuenta.' },
-                { Timestamp: new Date(), Tipo_Transporte: 'macro-periferico', Linea_Ruta: 'PERIFERICO', Limpieza: 4, Puntualidad_Frecuencia: 4, Efectividad: 5, Amabilidad_Conductor: 4, Calificacion_General: 4.25, Comentario: 'Mi Macro Periférico es una maravilla para moverse por toda la ciudad.' },
-                { Timestamp: new Date(), Tipo_Transporte: 'tren-l1', Linea_Ruta: 'L1', Limpieza: 3, Puntualidad_Frecuencia: 4, Amabilidad_Conductor: 5, Efectividad: 4, Calificacion_General: 4.0, Comentario: 'La línea 1 es funcional, aunque un poco vieja.' },
-                { Timestamp: new Date(), Tipo_Transporte: 'bus-c', Linea_Ruta: 'C123', Limpieza: 2, Puntualidad_Frecuencia: 1, Amabilidad_Conductor: 3, Efectividad: 2, Calificacion_General: 2.0, Comentario: 'La ruta C123 es muy irregular y las unidades están sucias.' }
-            ];
+            // Limpiar mensajes de estado
+            document.getElementById('login-status-message').classList.add('hidden');
+            document.getElementById('register-status-message').classList.add('hidden');
 
-            const RATING_CATEGORIES = [
-                { key: 'Limpieza', name: 'Limpieza' },
-                { key: 'Puntualidad_Frecuencia', name: 'Puntualidad / Frecuencia' },
-                { key: 'Amabilidad_Conductor', name: 'Amabilidad del Conductor' },
-                { key: 'Efectividad', name: 'Efectividad del Recorrido' },
-                { key: 'Calificacion_General', name: 'Calificación General' }
-            ];
+            if (registerForm.classList.contains('hidden')) {
+                // Mostrar registro, ocultar login
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                registerForm.classList.add('section-animation');
+            } else {
+                // Mostrar login, ocultar registro
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                loginForm.classList.add('section-animation');
+            }
+        }
 
-            const RATING_INPUT_CATEGORIES = [
-                { key: 'Limpieza', name: 'Limpieza del Transporte' },
-                { key: 'Puntualidad_Frecuencia', name: 'Puntualidad / Frecuencia' },
-                { key: 'Amabilidad_Conductor', name: 'Amabilidad del Conductor' },
-                { key: 'Efectividad', name: 'Efectividad del Recorrido' }
-            ];
-            
-            // --- Datos de Rutas (Accesibles Globalmente) ---
-            const troncales = [
-                { id: "T01", name: "Gobernador Curiel" }, { id: "T02", name: "Lázaro Cárdenas" }, { id: "T03", name: "Colón" }, { id: "T04A", name: "Huentitán" }, { id: "T04B", name: "Huentitán - Centro Médico" }, { id: "T05", name: "Huentitán - El Álamo" }, { id: "T06", name: "Río Nilo" }, { id: "T07", name: "Periférico" }, { id: "T08", name: "Belisario Domínguez" }, { id: "T09", name: "Huentitán - Zapopan" }, { id: "T10", name: "Av. Patria" }, { id: "T11A", name: "Rojo" }, { id: "T11B", name: "Verde" }, { id: "T13A", name: "Azucena" }, { id: "T13B", name: "La Loma" }, { id: "T13C", name: "Valle de los Emperadores" }, { id: "T14A", name: "La Calma" }, { id: "T14B", name: "San Juan de Dios" }, { id: "T15", name: "Centro - Sur" }, { id: "T16", name: "Adolf Horn" }, { id: "T17", name: "Chapultepec" }, { id: "T18A", name: "Terranova" }, { id: "T18B", name: "López Mateos" }, { id: "T19", name: "Periférico Norte" }, { id: "T19-C01", name: "Periférico Sur" }, { id: "T21", name: "Santa Anita" }
-            ];
-            const complementarias = [
-                { id: "C01", name: "Huentitán - Tonalá" }, { id: "C02", name: "Santa Cruz" }, { id: "C03", name: "Miramar" }, { id: "C04", name: "Zapotlanejo" }, { id: "C05", name: "Tonalá Centro" }, { id: "C06", name: "San Gaspar" }, { id: "C07", name: "La Venta" }, { id: "C08", name: "Tesistán" }, { id: "C09", name: "Santa Lucía" }, { id: "C10", name: "Nextipac" }, { id: "C11", name: "Emiliano Zapata" }, { id: "C12", name: "El Salto" }, { id: "C13", name: "El Castillo" }, { id: "C14", name: "El Salto - El Verde" }, { id: "C15", name: "El Salto - Las Pintas" }, { id: "C16", name: "Chulavista" }, { id: "C17", name: "1° de Mayo" }, { id: "C18", name: "Santa Fe" }, { id: "C19", name: "Cajititlán" }, { id: "C20", name: "Tlajomulco" }, { id: "C21", name: "La Calera" }, { id: "C22", name: "La Noria" }, { id: "C23", name: "La Azucena" }, { id: "C24", name: "San José del 15" }, { id: "C25", name: "Huentitán - San Pedrito" }, { id: "C26", name: "Huentitán - Santa Anita" }, { id: "C27", name: "Loma Dorada" }, { id: "C28", name: "Jauja" }, { id: "C29", name: "Colonia Jalisco" }, { id: "C30", name: "Los Camichines" }, { id: "C31", name: "Huentitán - Tlaquepaque" }, { id: "C32", name: "Lomas de San Miguel" }, { id: "C33", name: "San Miguel" }, { id: "C34", name: "Lomas del Paraíso" }, { id: "C35", name: "La Normal" }, { id: "C36", name: "Huentitán - El Verde" }, { id: "C37", name: "Huentitán - Lomas del Sur" }, { id: "C38", name: "San Pedrito" }, { id: "C39", name: "El Tapatío" }, { id: 'C40', name: 'Puerta de la Barranca' }, { id: 'C41', name: 'Jardines de la Reina' }, { id: 'C42', name: 'Huentitán - Central Camionera Nueva' }, { id: 'C43', name: 'Huentitán - Preparatoria 1' }, { id: 'C44', name: 'Plaza del Sol' }, { id: 'C45', name: 'El Fortín' }, { id: 'C46', name: 'El Vado' }, { id: 'C47', name: 'El Álamo' }, { id: 'C48', name: 'La Pila' }, { id: 'C49', name: 'Cerro del 4' }, { id: 'C50', name: 'Las Liebres' }, { id: 'C51', name: 'Laureles' }, { id: 'C52', name: 'Artesanos' }, { id: 'C53', name: 'Valle de los Molinos' }, { id: 'C54', name: 'Haciendas del Valle' }, { id: 'C55', name: 'Jardines del Sol' }, { id: 'C56', name: 'San Onofre' }, { id: 'C57', name: 'Tlajomulco - Centro' }, { id: 'C58', name: 'El Manantial' }, { id: 'C59', name: 'El Palomar' }, { id: 'C60', name: 'San Juan de Ocotán' }, { id: 'C61', name: 'La Venta del Astillero - Nextipac' }, { id: 'C62', name: 'La Magdalena' }, { id: 'C63', name: 'Tesistán - La Magdalena' }, { id: 'C64', name: 'San Isidro' }, { id: 'C65', name: 'La Experiencia' }, { id: 'C66', name: 'La Normal - Huentitán' }, { id: 'C67', name: 'La Normal - Lomas del Paraíso' }, { id: 'C68', name: 'La Normal - San Miguel' }, { id: 'C69', name: 'La Normal - Cerro del 4' }, { id: 'C70', name: 'Plaza del Sol - El Batán' }, { id: 'C71', name: 'Huentitán - Plaza del Sol' }, { id: 'C72', name: 'La Primavera' }, { id: 'C73', name: 'El Batán' }, { id: 'C74', name: 'Tesistán - Auditorio' }, { id: 'C75', name: 'Huentitán - El Salto' }, { id: 'C76', name: 'Tonalá - El Salto' }, { id: 'C77', name: 'El Salto - Santa Fe' }, { id: 'C78', name: 'Santa Anita - Tlajomulco' }, { id: 'C79', name: 'López Mateos' }, { id: 'C80', name: 'Santa Cruz del Valle' }, { id: 'C81', name: 'La Calerilla' }, { id: 'C82', name: 'Santa Anita - La Tijera' }, { id: 'C83', name: 'El Salto - El Verde' }, { id: 'C84', name: 'La Venta del Astillero - El Arenero' }, { id: 'C85', name: 'El Salto - San José del 15' }, { id: 'C86', name: 'El Salto - El Quince' }, { id: 'C87', name: 'El Salto - El Verde' }, { id: 'C88', name: 'El Salto - La Azucena' }, { id: 'C89', name: 'El Salto - San José del Castillo' }, { id: 'C90', name: 'La Azucena - El Salto' }, { id: 'C91', name: 'El Salto - Juanacatlán' }, { id: 'C92', name: 'El Salto - La Calera' }, { id: 'C93', name: 'El Salto - La Noria' }, { id: 'C94', name: 'El Salto - Las Liebres' }, { id: 'C95', name: 'El Salto - Las Pintas' }, { id: 'C96', name: 'Huentitán - Tlaquepaque' }, { id: 'C97', name: 'Lomas de San Miguel - Tlaquepaque' }, { id: 'C98', name: 'Tonalá - Plaza del Sol' }, { id: 'C99', name: 'Loma Dorada - Plaza del Sol' }, { id: 'C100', name: 'El Salto - Plaza del Sol' }, { id: 'C101', name: 'Tonalá - La Normal' }, { id: 'C102', name: 'Loma Dorada - La Normal' }, { id: 'C103', name: 'El Salto - La Normal' }, { id: 'C104', name: 'Huentitán - La Normal' }, { id: 'C105', name: 'Tonalá - CUCEI' }, { id: 'C106', name: 'Loma Dorada - CUCEI' }, { id: 'C107', name: 'El Salto - CUCEI' }, { id: 'C108', name: 'Huentitán - CUCEI' }, { id: 'C109', name: 'Tonalá - Centro Médico' }, { id: 'C110', name: 'Loma Dorada - Centro Médico' }, { id: 'C111', name: 'El Salto - Centro Médico' }, { id: 'C112', name: 'Huentitán - Centro Médico' }, { id: 'C113', name: 'Tonalá - Santa Anita' }, { id: 'C114', name: 'Loma Dorada - Santa Anita' }, { id: 'C115', name: 'El Salto - Santa Anita' }, { id: 'C116', name: 'Huentitán - Santa Anita' }, { id: 'C117', name: 'Lomas del Sur' }, { id: 'C118', name: 'Huentitán - Lomas del Sur' }, { id: 'C119', name: 'Huentitán - San Pedrito' }, { id: 'C120', name: 'Chulavista' }, { id: 'C121', name: 'Huentitán - Chulavista' }, { id: 'C123', name: 'Santa Ana Tepetitlán' }, { id: 'C124', name: 'El Colli' }, { id: "C125", name: "López Mateos" }, { id: "C126", name: "Mariano Otero" }, { id: "C127", name: "El Briseño" }, { id: "C128", name: "Paraísos del Colli" }, { id: "C129", name: "Lomas de la Primavera" }, { id: "C130", name: "El Fortín" }, { id: "C131", name: "Jardines de la Calma" }, { id: "C132", name: "El Batán" }, { id: "C133", name: "La Experiencia" }, { id: "C135", name: "El Salto" }, { id: "C136", name: "Huentitán - El Batán" },
-            ];
-            const alimentadoras = [
-                { id: "A01", name: "Panteón Nuevo" }, { id: "A02", name: "San Gaspar" }, { id: "A03", name: "Lomas de la Primavera" }, { id: "A04", name: "Tabachines" }, { id: "A05", name: "La Tuzanía" }, { id: "A06", name: "Base Aérea" }, { id: "A07", name: "Periférico Poniente" }, { id: "A08", name: "El Salto" }, { id: "A09", name: "Juanacatlán" }, { id: "A10", name: "El Verde" }, { id: "A11", name: "La Calera" }, { id: "A12", name: "La Noria" }, { id: "A13", name: "La Azucena" }, { id: "A14", name: "San José del 15" }, { id: "A15", name: "El Quince" }, { id: "A16", name: "San José del Castillo" }, { id: "A17", name: "Santa Fe" }, { id: "A18", name: "Cajititlán" }, { id: "A19", name: "Tlajomulco" }, { id: "A20", name: "La Calerilla" }, { id: "A21", name: "Santa Anita" }, { id: "MP-A01", name: "Carretera a Chapala" }, { id: "MP-A02", name: "San Martín de las Flores" }, { id: "MP-A03", name: "Lomas de la Soledad" }, { id: "MP-A04", name: "Tonalá" }, { id: "MP-A05", name: "La Cuna Alfarera" }, { id: "MP-A06", name: "Barranca de Huentitán" }, { id: "MP-A07", name: "Independencia" },
-            ];
-            const allBusRoutes = { 
-                'bus-t': troncales, 
-                'bus-c': complementarias, 
-                'bus-a': alimentadoras 
-            };
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const button = document.getElementById('login-button');
+            const spinner = document.getElementById('login-spinner');
+            const statusMessage = document.getElementById('login-status-message');
 
+            // Simular carga
+            button.disabled = true;
+            spinner.classList.remove('hidden');
+            statusMessage.classList.add('hidden');
 
-            const resetCurrentRatings = () => {
-                currentRatings = Object.fromEntries(RATING_INPUT_CATEGORIES.map(cat => [cat.key, 0]));
-            };
-
-            // --- Funciones de UI ---
-
-            const renderRatingComponent = (key, name) => {
-                const starIcons = Array(5).fill(0).map((_, index) => `
-                    <i data-lucide="star" 
-                       class="rating-star w-7 h-7 text-amber-400" 
-                       data-category="${key}" 
-                       data-value="${index + 1}" 
-                       onclick="setRating('${key}', ${index + 1})">
-                    </i>`).join('');
-                return `
-                    <div class="p-4 bg-white rounded-lg border">
-                        <label class="block text-md font-semibold text-gray-700 mb-3">${name}</label>
-                        <div id="stars-${key}" class="flex space-x-2 justify-center">${starIcons}</div>
-                        <p id="value-${key}" class="text-center mt-2 text-sm text-gray-500">Sin calificar</p>
-                    </div>`;
-            };
-
-            const updateStarVisuals = (category, value) => {
-                const container = document.getElementById(`stars-${category}`);
-                const stars = container ? container.querySelectorAll('.rating-star') : [];
-                stars.forEach(star => {
-                    const starValue = parseInt(star.dataset.value);
-                    star.classList.toggle('filled', starValue <= value);
-                });
-                currentRatings[category] = value;
-                document.getElementById(`value-${category}`).innerText = value > 0 ? `Calificación: ${value} / 5` : 'Sin calificar';
-                checkFormValidity();
-            };
-
-            window.setRating = (category, value) => updateStarVisuals(category, value);
-
-            const checkFormValidity = () => {
-                const transportType = document.getElementById('transportType').value;
-                const routeLine = document.getElementById('routeLine').value.trim();
-                const isTypeSelected = transportType !== "";
-                const isRouteEntered = routeLine !== "";
-                const allRated = RATING_INPUT_CATEGORIES.every(cat => currentRatings[cat.key] > 0);
-                const isValid = allRated && isTypeSelected && isRouteEntered;
+            setTimeout(() => {
+                // Simulación de éxito
+                button.disabled = false;
+                spinner.classList.add('hidden');
                 
-                const submitButton = document.getElementById('submit-button');
-                submitButton.disabled = !isValid;
-                document.getElementById('submit-text').innerText = isValid ? "Enviar Calificación" : "Completa todos los campos";
-            };
+                statusMessage.innerText = '¡Inicio de sesión exitoso! Redirigiendo...';
+                statusMessage.classList.remove('hidden', 'text-red-600', 'bg-red-100');
+                statusMessage.classList.add('text-green-600', 'bg-green-100');
 
-            const showMessage = (message, className) => {
-                const statusMessage = document.getElementById('status-message');
-                statusMessage.innerText = message;
-                statusMessage.className = `mt-4 text-center font-medium p-3 rounded-lg ${className}`;
-                statusMessage.classList.remove('hidden');
-                setTimeout(() => statusMessage.classList.add('hidden'), 3000);
-            };
-            
-            window.switchTab = (tabName) => {
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-                
-                const contentSections = document.querySelectorAll('[id^="content-"]');
-                contentSections.forEach(content => {
-                    content.classList.add('hidden');
-                    content.classList.remove('section-animation');
-                });
+                document.getElementById('user-id-display').innerText = `Usuario: ${email}`;
 
-                document.getElementById(`tab-${tabName}`).classList.add('active');
-                
-                const activeContent = document.getElementById(`content-${tabName}`);
-                activeContent.classList.remove('hidden');
-                activeContent.classList.add('section-animation');
-
-                lucide.createIcons();
-
-                if (tabName === 'map' && !mapInitialized) {
-                    setTimeout(() => initMap(), 50); 
-                } else if (tabName === 'map' && map) {
-                    setTimeout(() => map.invalidateSize(), 50);
-                } else if (tabName === 'analytics') {
-                    setTimeout(renderAnalyticsCharts, 50);
-                }
-            };
-
-            window.showRouteDetails = (id, name) => {
-                const modal = document.getElementById('route-modal');
-                const titleEl = document.getElementById('modal-route-title');
-                const descEl = document.getElementById('modal-route-desc');
-
-                if (modal && titleEl && descEl) {
-                    titleEl.textContent = id;
-                    descEl.textContent = name;
-                    modal.classList.remove('hidden');
-                    lucide.createIcons();
-                }
-            };
-
-            window.closeRouteModal = () => {
-                const modal = document.getElementById('route-modal');
-                if (modal) {
-                    modal.classList.add('hidden');
-                }
-            };
-
-            // --- NUEVA Lógica de Estado de Navegación ---
-            const updateNavState = () => {
-                const tabsToDisable = ['home', 'rate', 'ranking', 'comments', 'map', 'routes', 'analytics'];
-                const sesionTab = document.getElementById('tab-sesion');
-                
-                if (isAuthenticated) {
-                    // Logueado: Habilitar pestañas y cambiar "Sesión" por "Cerrar Sesión"
-                    sesionTab.innerHTML = '<i data-lucide="log-out" class="w-5 h-5"></i> Cerrar Sesión';
-                    sesionTab.onclick = handleLogout; // Asignar nueva función
-                    
-                    tabsToDisable.forEach(tabId => {
-                        const tab = document.getElementById(`tab-${tabId}`);
-                        if (tab) {
-                            tab.disabled = false;
-                            tab.classList.remove('opacity-50', 'cursor-not-allowed');
-                        }
-                    });
-                } else {
-                    // Deslogueado: Deshabilitar pestañas
-                    sesionTab.innerHTML = '<i data-lucide="user" class="w-5 h-5"></i> Sesión';
-                    sesionTab.onclick = () => switchTab('sesion'); // Asignar función original
-
-                    tabsToDisable.forEach(tabId => {
-                        const tab = document.getElementById(`tab-${tabId}`);
-                        if (tab) {
-                            tab.disabled = true;
-                            tab.classList.add('opacity-50', 'cursor-not-allowed');
-                        }
-                    });
-                }
-                lucide.createIcons(); // Actualizar íconos
-            };
-
-
-            // --- Lógica de Sesión (Demo) ---
-
-            window.handleLogout = (event) => { // NUEVA función para cerrar sesión
-                event.preventDefault();
-                isAuthenticated = false;
-                updateNavState();
-                switchTab('sesion');
-            };
-
-            window.handleLogin = (event) => {
-                event.preventDefault();
-                const button = document.getElementById('login-button');
-                const spinner = document.getElementById('login-spinner');
-                const statusMessage = document.getElementById('login-status-message');
-                
-                // --- Lógica de Validación ---
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
-                const correctEmail = "pedritogamer123@alumnos.udg.mx";
-                const correctPassword = "arribalasaguilas";
-                // --- Fin Lógica de Validación ---
-
-                button.disabled = true;
-                spinner.classList.remove('hidden');
-                
-                setTimeout(() => { // Simular llamada a servidor
-                    button.disabled = false;
-                    spinner.classList.add('hidden');
-
-                    if (email === correctEmail && password === correctPassword) {
-                        // --- ÉXITO ---
-                        isAuthenticated = true;
-                        updateNavState();
-                        statusMessage.innerText = 'Inicio de sesión exitoso. ¡Bienvenido!';
-                        statusMessage.className = 'mt-4 text-center font-medium p-3 rounded-lg bg-green-100 text-green-700';
-                        statusMessage.classList.remove('hidden');
-                        setTimeout(() => {
-                            statusMessage.classList.add('hidden');
-                            switchTab('home'); // Redirigir a Inicio
-                        }, 1000);
-                    } else {
-                        // --- FALLO ---
-                        isAuthenticated = false;
-                        statusMessage.innerText = 'Correo o contraseña incorrectos.';
-                        statusMessage.className = 'mt-4 text-center font-medium p-3 rounded-lg bg-red-100 text-red-700';
-                        statusMessage.classList.remove('hidden');
-                        setTimeout(() => statusMessage.classList.add('hidden'), 3000);
-                    }
-                }, 1500);
-            };
-            
-            window.handleRegister = (event) => {
-                 event.preventDefault();
-                const button = document.getElementById('register-button');
-                const spinner = document.getElementById('register-spinner');
-                const statusMessage = document.getElementById('register-status-message');
-                
-                button.disabled = true;
-                spinner.classList.remove('hidden');
-                
+                // Redirigir a la pestaña "Home"
                 setTimeout(() => {
-                    button.disabled = false;
-                    spinner.classList.add('hidden');
-                    statusMessage.innerText = 'Registro simulado. ¡Ahora inicia sesión!';
-                    statusMessage.className = 'mt-4 text-center font-medium p-3 rounded-lg bg-green-100 text-green-700';
-                    statusMessage.classList.remove('hidden');
-                    setTimeout(() => {
-                        statusMessage.classList.add('hidden');
-                        toggleRegister(event); // Switch back to login form
-                    }, 3000);
+                    switchTab('home');
+                    statusMessage.classList.add('hidden');
+                    document.getElementById('login-form').reset();
                 }, 1500);
-            };
 
-            window.toggleRegister = (event) => {
-                event.preventDefault();
-                const loginForm = document.getElementById('login-form').parentElement;
-                const registerForm = document.getElementById('register-form-container');
+            }, 2000);
+        }
+
+        function handleRegister(e) {
+            e.preventDefault();
+            const button = document.getElementById('register-button');
+            const spinner = document.getElementById('register-spinner');
+            const statusMessage = document.getElementById('register-status-message');
+
+            // Simular carga
+            button.disabled = true;
+            spinner.classList.remove('hidden');
+            statusMessage.classList.add('hidden');
+
+            setTimeout(() => {
+                // Simulación de éxito
+                button.disabled = false;
+                spinner.classList.add('hidden');
                 
-                loginForm.classList.toggle('hidden');
-                registerForm.classList.toggle('hidden');
-            };
+                statusMessage.innerText = '¡Registro exitoso! Ahora puedes iniciar sesión.';
+                statusMessage.classList.remove('hidden', 'text-red-600', 'bg-red-100');
+                statusMessage.classList.add('text-green-600', 'bg-green-100');
 
-            // --- Lógica de Datos Locales ---
-
-            window.handleRatingSubmit = (event) => {
-                event.preventDefault();
-                
-                const submitButton = document.getElementById('submit-button');
-                const submitText = document.getElementById('submit-text');
-                const spinner = document.getElementById('submit-spinner');
-
-                submitButton.disabled = true;
-                submitText.innerText = 'Guardando...';
-                spinner.classList.remove('hidden');
-
-                const totalScore = RATING_INPUT_CATEGORIES.reduce((sum, cat) => sum + (currentRatings[cat.key] || 0), 0);
-                const averageScore = totalScore / RATING_INPUT_CATEGORIES.length;
-                
-                const transportType = document.getElementById('transportType').value;
-                let routeLine = document.getElementById('routeLine').value.toUpperCase().trim();
-
-                const ratingData = {
-                    Tipo_Transporte: transportType,
-                    Linea_Ruta: routeLine,
-                    ...currentRatings,
-                    Calificacion_General: averageScore,
-                    Comentario: document.getElementById('comment').value.trim(),
-                    Timestamp: new Date()
-                };
-                
-                // Añadir a nuestro array local en lugar de Firebase
-                allCommunityRatings.unshift(ratingData);
-
+                // Volver al login
                 setTimeout(() => {
-                    spinner.classList.add('hidden');
-                    showMessage('¡Calificación guardada con éxito!', 'bg-green-100 text-green-700');
-                    
-                    // Actualizar vistas dinámicamente
-                    updateRanking(allCommunityRatings);
-                    filterAndDisplayComments(currentCommentFilter); // Usa el filtro actual
-                    renderAnalyticsCharts();
-                    
-                    // Resetear formulario
-                    document.getElementById('rating-form').reset();
-                    resetCurrentRatings();
-                    RATING_INPUT_CATEGORIES.forEach(cat => updateStarVisuals(cat.key, 0));
-                    checkFormValidity();
-                }, 1000);
-            };
+                    toggleRegister(e); // Llama a toggleRegister para volver al login
+                    document.getElementById('register-form').reset();
+                }, 2000);
 
-            // --- Lógica del Ranking y Comentarios ---
+            }, 2000);
+        }
 
-            const renderScoreBar = (score) => {
-                const widthPercent = (score / 5) * 100;
-                let colorClass = 'bg-gray-300';
-                if (score >= 4) colorClass = 'bg-emerald-500';
-                else if (score >= 3) colorClass = 'bg-yellow-500';
-                else if (score > 0) colorClass = 'bg-red-500';
 
-                return `
-                    <div class="relative w-20 h-2 rounded-full bg-gray-200 overflow-hidden">
-                        <div class="h-full ${colorClass} transition-all duration-500 ease-out" style="width: ${widthPercent.toFixed(0)}%;"></div>
-                    </div>`;
-            };
-
-            const renderStars = (rating) => {
-                let html = '';
-                for (let i = 1; i <= 5; i++) {
-                    const isFilled = rating >= i;
-                    html += `<i data-lucide="star" class="w-4 h-4 text-amber-500" style="fill: ${isFilled ? '#f59e0b' : 'none'}; stroke: #f59e0b; stroke-width: 2;"></i>`;
-                }
-                return `<div class="flex items-center space-x-0.5">${html}</div>`;
-            };
-
-            window.filterAndDisplayRanking = (filter) => {
-                currentRankingFilter = filter;
-                document.querySelectorAll('.ranking-filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.filter === filter) {
-                        btn.classList.add('active');
-                    }
-                });
-
-                let filteredList = fullRankingList;
-
-                if (currentRankingFilter !== 'all') {
-                     if (currentRankingFilter === 'tren') {
-                        filteredList = fullRankingList.filter(r => r.type.startsWith('tren-'));
-                    } else if (currentRankingFilter === 'macro') {
-                        filteredList = fullRankingList.filter(r => r.type.startsWith('macro-'));
-                    } else {
-                        filteredList = fullRankingList.filter(r => r.type === 'bus-' + currentRankingFilter.split('-')[1]);
-                    }
-                }
-                
-                const rankingContainer = document.getElementById('ranking-container');
-                if (filteredList.length === 0) {
-                    rankingContainer.innerHTML = `<p class="text-center text-gray-500 p-4">No hay calificaciones para esta categoría. ¡Sé el primero en calificarla!</p>`;
-                    return;
-                }
-
-                rankingContainer.innerHTML = filteredList.map((item, index) => {
-                    const generalStars = renderStars(item.averages.Calificacion_General);
-                    const detailItems = RATING_CATEGORIES.filter(cat => cat.key !== 'Calificacion_General').map(cat => `
-                        <div class="flex items-center justify-between">
-                            <span class="font-medium text-gray-600 text-sm">${cat.name}</span>
-                            <div class="flex items-center space-x-2">
-                               ${renderScoreBar(item.averages[cat.key])}
-                                <span class="font-semibold text-gray-800 w-8 text-right text-sm">${item.averages[cat.key].toFixed(1)}</span>
-                            </div>
-                        </div>`).join('');
-                    return `
-                        <div class="bg-white p-5 rounded-xl border hover:shadow-lg transition-shadow duration-200">
-                            <div class="flex items-center space-x-4 mb-3 pb-3 border-b border-gray-100">
-                                <span class="text-3xl font-extrabold text-teal-600">${index + 1}.</span>
-                                <div>
-                                    <h3 class="text-xl font-bold text-gray-800">${item.route.replace('bus-t - ', 'T').replace('bus-c - ', 'C').replace('bus-a - ', 'A')}</h3>
-                                    <div class="flex items-center mt-1">
-                                        ${generalStars}
-                                         <span class="ml-2 font-bold text-amber-600 text-lg">${item.averages.Calificacion_General.toFixed(2)}</span>
-                                         <span class="ml-3 text-sm text-gray-500">(${item.count} votos)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="space-y-3 p-3 bg-gray-50 rounded-lg mt-3 border border-gray-100">${detailItems}</div>
-                        </div>`;
-                }).join('');
-                lucide.createIcons();
-            };
-
-            const updateRanking = (allRatings) => {
-                if (allRatings.length === 0) {
-                    document.getElementById('ranking-container').innerHTML = `<p class="text-center text-gray-500 p-4">Aún no hay calificaciones. ¡Sé el primero!</p>`;
-                    fullRankingList = [];
-                    return;
-                }
-                const groupedRatings = allRatings.reduce((acc, rating) => {
-                    let key;
-                    if (rating.Tipo_Transporte.startsWith('tren-') || rating.Tipo_Transporte.startsWith('macro-')) {
-                        key = rating.Tipo_Transporte;
-                    } else {
-                        key = `${rating.Tipo_Transporte} - ${rating.Linea_Ruta}`;
-                    }
-
-                    if (!acc[key]) {
-                        acc[key] = { 
-                            count: 0, 
-                            totals: Object.fromEntries(RATING_CATEGORIES.map(cat => [cat.key, 0])),
-                            type: rating.Tipo_Transporte
-                        };
-                    }
-                    acc[key].count++;
-                    RATING_CATEGORIES.forEach(cat => {
-                        acc[key].totals[cat.key] += (typeof rating[cat.key] === 'number' ? rating[cat.key] : 0);
-                    });
-                    return acc;
-                }, {});
-
-                const rankingList = Object.entries(groupedRatings).map(([route, data]) => {
-                    const averages = {};
-                    RATING_CATEGORIES.forEach(cat => {
-                        averages[cat.key] = data.totals[cat.key] / data.count;
-                    });
-                    return { route, count: data.count, averages, type: data.type };
-                });
-
-                rankingList.sort((a, b) => b.averages.Calificacion_General - a.averages.Calificacion_General);
-                
-                fullRankingList = rankingList;
-                filterAndDisplayRanking(currentRankingFilter);
-                
-                if (mapInitialized) {
-                    updateMapPopups(fullRankingList);
-                }
-            };
-
-            const updateComments = (allRatings) => {
-                const commentsContainer = document.getElementById('comments-container');
-                let ratingsWithComments = allRatings.filter(rating => rating.Comentario && rating.Comentario.trim() !== '');
-                
-                if (currentCommentFilter !== 'all') {
-                    if (currentCommentFilter === 'tren') {
-                        ratingsWithComments = ratingsWithComments.filter(r => r.Tipo_Transporte.startsWith('tren-'));
-                    } else if (currentCommentFilter === 'macro') {
-                        ratingsWithComments = ratingsWithComments.filter(r => r.Tipo_Transporte.startsWith('macro-'));
-                    } else {
-                        ratingsWithComments = ratingsWithComments.filter(r => r.Tipo_Transporte.startsWith(currentCommentFilter));
-                    }
-                }
-
-                if (ratingsWithComments.length === 0) {
-                    commentsContainer.innerHTML = `<p class="text-center text-gray-500 p-4">No hay comentarios para esta categoría. ¡Sé el primero en dejar uno!</p>`;
-                    return;
-                }
-
-                ratingsWithComments.sort((a, b) => b.Timestamp - a.Timestamp);
-
-                commentsContainer.innerHTML = ratingsWithComments.map(item => {
-                    const date = item.Timestamp;
-                    const formattedDate = `${date.toLocaleDateString('es-MX')} ${date.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}`;
-                    const routeName = (item.Tipo_Transporte.startsWith('tren-') || item.Tipo_Transporte.startsWith('macro-'))
-                        ? item.Tipo_Transporte 
-                        : `${item.Tipo_Transporte.replace('bus-', '').toUpperCase()} - ${item.Linea_Ruta}`;
-                    return `
-                        <div class="bg-gray-50 p-4 rounded-lg border hover:shadow-md transition-shadow duration-200">
-                            <div class="flex justify-between items-start mb-2">
-                                <h4 class="font-bold text-teal-700">${routeName}</h4>
-                                <span class="text-xs text-gray-500 text-right flex-shrink-0 ml-2">${formattedDate}</span>
-                            </div>
-                            <p class="text-gray-800 italic leading-relaxed">"${item.Comentario}"</p>
-                        </div>`;
-                }).join('');
-            };
+        // --- LÓGICA DE CALIFICACIÓN ---
+        function generateRatingFields() {
+            const container = document.getElementById('ratings-container');
+            container.innerHTML = '';
             
-            window.filterAndDisplayComments = (filter) => {
-                currentCommentFilter = filter;
-                document.querySelectorAll('.comment-filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.filter === filter) {
-                        btn.classList.add('active');
-                    }
-                });
-                updateComments(allCommunityRatings);
-            };
-            
-            const populateBusRoutes = () => {
-                const renderList = (data) => data.map(route => {
-                    const escapedName = route.name.replace(/'/g, "\\'");
-                    return `<button onclick="showRouteDetails('${route.id}', '${escapedName}')">
-                                ${route.id}
-                            </button>`;
-                }).join('');
-                
-                document.getElementById('troncales-list').innerHTML = renderList(troncales);
-                document.getElementById('complementarias-list').innerHTML = renderList(complementarias);
-                document.getElementById('alimentadoras-list').innerHTML = renderList(alimentadoras);
-            };
+            ratingCategories.forEach(category => {
+                selectedRatings[category.id] = 0; // Inicializar en 0
 
-            // --- Lógica de Gráficas ---
-
-            const getChartDataForType = (typePrefix) => {
-                const labels = [];
-                const data = [];
-                
-                const filteredData = fullRankingList.filter(item => item.type.startsWith(typePrefix));
-
-                filteredData.sort((a, b) => b.averages.Calificacion_General - a.averages.Calificacion_General);
-                
-                const routeNameMap = {
-                    'tren-l1': 'Línea 1', 'tren-l2': 'Línea 2', 'tren-l3': 'Línea 3',
-                    'macro-calzada': 'Macro Calzada', 'macro-periferico': 'Macro Periférico'
-                };
-
-                filteredData.forEach(item => {
-                    const label = routeNameMap[item.route] || item.route.replace(/bus-[tca] - /g, '');
-                    labels.push(label);
-                    data.push(item.averages.Calificacion_General.toFixed(2));
-                });
-
-                return { labels, data };
-            };
-
-            const createOrUpdateChart = (chartId, chartType, chartLabel, chartData) => {
-                const ctx = document.getElementById(chartId).getContext('2d');
-                
-                if (charts[chartId]) {
-                    charts[chartId].destroy();
-                }
-                
-                Chart.defaults.font.family = "'Poppins', sans-serif";
-                Chart.defaults.font.weight = '500';
-
-                const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-                gradient.addColorStop(0, 'rgba(20, 184, 166, 0.6)');   
-                gradient.addColorStop(1, 'rgba(15, 118, 110, 0.6)');
-
-                charts[chartId] = new Chart(ctx, {
-                    type: chartType,
-                    data: {
-                        labels: chartData.labels,
-                        datasets: [{
-                            label: chartLabel,
-                            data: chartData.data,
-                            backgroundColor: gradient,
-                            borderColor: '#0f766e',
-                            borderWidth: 2,
-                            borderRadius: 8,
-                            borderSkipped: false,
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        indexAxis: chartData.labels.length > 8 ? 'y' : 'x',
-                        scales: {
-                            y: { beginAtZero: true, max: 5, grid: { color: '#e5e7eb' }, ticks: { color: '#4b5563' } },
-                            x: { grid: { display: false }, ticks: { color: '#4b5563', autoSkip: false, maxRotation: 45, minRotation: 45 } }
-                        },
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                backgroundColor: '#1f2937', titleColor: '#ffffff', bodyColor: '#ffffff',
-                                padding: 12, cornerRadius: 6, displayColors: false,
-                                callbacks: {
-                                    title: (context) => context[0].label,
-                                    label: (context) => `Calificación: ${context.raw} ★`
-                                }
-                            }
-                        }
-                    }
-                });
-            };
-
-            const renderAnalyticsCharts = () => {
-                createOrUpdateChart('tren-chart', 'bar', 'Calificación General', getChartDataForType('tren'));
-                createOrUpdateChart('macro-chart', 'bar', 'Calificación General', getChartDataForType('macro'));
-                createOrUpdateChart('troncales-chart', 'bar', 'Calificación General', getChartDataForType('bus-t'));
-                createOrUpdateChart('complementarias-chart', 'bar', 'Calificación General', getChartDataForType('bus-c'));
-                createOrUpdateChart('alimentadoras-chart', 'bar', 'Calificación General', getChartDataForType('bus-a'));
-            };
-
-            // --- Lógica del Mapa ---
-            const routesData = {
-                "trenL1": { "name": "Mi Tren - Línea 1", "image": "https://placehold.co/80x60/ef4444/ffffff?text=L1", "stations": "Periférico Norte, Dermatológico, Atemajac, División del Norte, Ávila Camacho, Mezquitán, Refugio, Juárez, Mexicaltzingo, Washington, Santa Filomena, Unidad Deportiva, Urdaneta, 18 de Marzo, Isla Raza, Patria, España, Tesoro, Periférico Sur.", "coords": [[20.72558,-103.34573],[20.71833,-103.3484],[20.71306,-103.34983],[20.70731,-103.35123],[20.70199,-103.35204],[20.69709,-103.35246],[20.69253,-103.35296],[20.68856,-103.35334],[20.68356,-103.35252],[20.67814,-103.35174],[20.67503,-103.3496],[20.66904,-103.35418],[20.66254,-103.35818],[20.65903,-103.36052],[20.65471,-103.36304],[20.64828,-103.36676],[20.64203,-103.37021],[20.6358,-103.37318],[20.62883,-103.37689],[20.6213,-103.38072],[20.6136,-103.38497],[20.6062,-103.3881],[20.5975,-103.3915],[20.58504,-103.39652]], "color": "#ef4444" },
-                "trenL2": { "name": "Mi Tren - Línea 2", "image": "https://placehold.co/80x60/22c55e/ffffff?text=L2", "stations": "Juárez, Plaza Universidad, San Juan de Dios, Belisario Domínguez, Oblatos, Cristóbal de Oñate, San Andrés, San Jacinto, Tetlán.", "coords": [[20.67503,-103.3496],[20.67609,-103.34352],[20.6765,-103.33597],[20.6766,-103.32801],[20.67679,-103.32104],[20.677,-103.31405],[20.67702,-103.30804],[20.67718,-103.3005],[20.67746,-103.29249],[20.67784,-103.28448],[20.67803,-103.27501]], "color": "#22c55e" },
-                "trenL3": { "name": "Mi Tren - Línea 3", "image": "https://placehold.co/80x60/d946ef/ffffff?text=L3", "stations": "Arcos de Zapopan, Periférico Belenes, Mercado del Mar, Zapopan Centro, Plaza Patria, Circunvalación, Ávila Camacho, La Normal, Santuario, Guadalajara Centro, Independencia, Plaza de la Bandera, CUCEI, Revolución, Río Nilo, Tlaquepaque Centro, Lázaro Cárdenas, Central de Autobuses.", "coords": [[20.73581,-103.40051],[20.73029,-103.39649],[20.72603,-103.39304],[20.72051,-103.38753],[20.71524,-103.38401],[20.71001,-103.38202],[20.70498,-103.37798],[20.70201,-103.37501],[20.69752,-103.36803],[20.69501,-103.36502],[20.691,-103.35804],[20.68856,-103.35334],[20.68598,-103.34799],[20.68101,-103.34502],[20.67751,-103.34401],[20.674,-103.341],[20.672,-103.338],[20.668,-103.334],[20.665,-103.331],[20.661,-103.327],[20.658,-103.324],[20.6555,-103.321],[20.653,-103.318],[20.6505,-103.314],[20.648,-103.31],[20.644,-103.3075],[20.64,-103.305],[20.635,-103.302],[20.63,-103.299],[20.625,-103.296],[20.62,-103.293]], "color": "#d946ef" },
-                "macroCalzada": { "name": "Mi Macro Calzada", "image": "https://placehold.co/80x60/3b82f6/ffffff?text=Macro", "stations": "Mirador, Huentitán, Zoológico, Independencia Norte, San Patricio, Igualdad, Circunvalación, Juan Álvarez, Alameda, San Juan de Dios, Bicentenario, La Paz, Niños Héroes, Agua Azul, Ciprés, Héroes de Nacozari, Lázaro Cárdenas, El Deán, Fray Angélico.", "coords": [[20.72198,-103.31102],[20.71251,-103.31301],[20.707,-103.314],[20.702,-103.315],[20.697,-103.316],[20.692,-103.3175],[20.686,-103.321],[20.682,-103.322],[20.68,-103.323],[20.6775,-103.328],[20.6765,-103.336],[20.67001,-103.33753],[20.664,-103.3385],[20.658,-103.3395],[20.652,-103.3405],[20.645,-103.3415],[20.638,-103.3425],[20.631,-103.3435],[20.623,-103.3445],[20.615,-103.3455]], "color": "#3b82f6" },
-                "macroPeriferico": { "name": "Mi Macro Periférico", "image": "https://placehold.co/80x60/8b5cf6/ffffff?text=Macro", "stations": "Barranca de Huentitán, Zoológico Guadalajara, Independencia Norte, Lomas de San Eugenio, Gran Terraza Oblatos, San Isidro, Centro Cultural Universitario, Periférico Belenes, Tabachines, La Tuzanía, Santa Margarita, Periférico Norte, San Juan de Ocotán, Vallarta, Ciudad Judicial, Chivas, Tepeyac, Mariano Otero, El Briseño, López Mateos, ITESO, Periférico Sur, San Sebastianito, 8 de Julio, Toluquilla, Adolf Horn, Artesanos, Las Pintas, Lázaro Cárdenas, Carretera a Chapala.", "coords": [[20.7011,-103.2995],[20.7093,-103.3081],[20.7255,-103.3458],[20.7303,-103.3965],[20.721,-103.419],[20.706,-103.435],[20.687,-103.447],[20.668,-103.456],[20.650,-103.460],[20.631,-103.456],[20.613,-103.446],[20.598,-103.429],[20.585,-103.3965],[20.598,-103.385],[20.612,-103.366],[20.625,-103.342],[20.640,-103.322],[20.658,-103.311],[20.679,-103.302],[20.7011,-103.2995]], "color": "#8b5cf6" }
-            };
-            
-            const createPopupContent = (routeInfo, ratingItem = null) => {
-                let ratingHtml = '<p class="text-sm text-gray-500">Aún sin calificación comunitaria.</p>';
-                if (ratingItem) {
-                    const starsHtml = renderStars(ratingItem.averages.Calificacion_General);
-                    ratingHtml = `
-                        <div class="flex items-center mt-1 mb-2 border-t pt-2 border-gray-100">
-                            ${starsHtml}
-                            <span class="ml-2 font-bold text-amber-600">${ratingItem.averages.Calificacion_General.toFixed(2)}</span>
-                            <span class="ml-2 text-sm text-gray-500">(${ratingItem.count} votos)</span>
-                        </div>`;
-                }
-
-                return `
-                    <div class="flex items-center gap-3 mb-2">
-                        <img src="${routeInfo.image}" alt="${routeInfo.name}" class="w-16 h-12 object-cover rounded-md shadow-sm">
-                        <h4 class="flex-1">${routeInfo.name}</h4>
+                const fieldHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 bg-white rounded-lg shadow-sm border">
+                        <span class="text-sm font-medium text-gray-700 mb-2 sm:mb-0">${category.name}</span>
+                        <div class="flex items-center gap-1" data-category="${category.id}">
+                            ${[1, 2, 3, 4, 5].map(star => `
+                                <svg class="w-7 h-7 rating-star" data-value="${star}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            `).join('')}
+                        </div>
                     </div>
-                    ${ratingHtml}
-                    <p><strong>Estaciones Principales:</strong> ${routeInfo.stations}</p>
                 `;
-            };
+                container.innerHTML += fieldHTML;
+            });
 
-            const updateMapPopups = (rankingList) => {
-                if (!map || !mapLayers || !rankingList) return;
+            // Añadir eventos a las estrellas
+            container.querySelectorAll('.rating-star').forEach(star => {
+                star.addEventListener('click', handleStarClick);
+                star.addEventListener('mouseover', handleStarHover);
+                star.addEventListener('mouseout', handleStarOut);
+            });
+        }
 
-                rankingList.forEach(item => {
-                    const routeTypeSimple = item.route.split(' - ')[0];
-                    let mapKey = null;
-
-                    if (routeTypeSimple === 'tren-l1') mapKey = 'trenL1';
-                    else if (routeTypeSimple === 'tren-l2') mapKey = 'trenL2';
-                    else if (routeTypeSimple === 'tren-l3') mapKey = 'trenL3';
-                    else if (routeTypeSimple === 'macro-calzada') mapKey = 'macroCalzada';
-                    else if (routeTypeSimple === 'macro-periferico') mapKey = 'macroPeriferico';
-
-                    if (mapKey && mapLayers[mapKey]) {
-                        const layer = mapLayers[mapKey];
-                        const routeInfo = routesData[mapKey];
-                        const newPopupContent = createPopupContent(routeInfo, item);
-                        layer.bindPopup(newPopupContent);
-                    }
-                });
-            };
+        function handleStarClick(e) {
+            const star = e.currentTarget;
+            const category = star.parentElement.dataset.category;
+            const value = parseInt(star.dataset.value);
             
-            function initMap() {
-                if (mapInitialized) return;
-                mapInitialized = true;
-                
-                map = L.map('map').setView([20.6597, -103.3496], 12); // Centrado en GDL
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-                }).addTo(map);
+            selectedRatings[category] = value;
+            updateStars(category, value);
+            validateForm(); // Validar el formulario después de cada clic
+        }
 
-                const trenLayers = L.layerGroup();
-                const macroLayers = L.layerGroup();
+        function handleStarHover(e) {
+            const star = e.currentTarget;
+            const category = star.parentElement.dataset.category;
+            const value = parseInt(star.dataset.value);
+            updateStars(category, value, true); // Hover state
+        }
 
-                Object.entries(routesData).forEach(([key, route]) => {
-                    const popupContent = createPopupContent(route);
-                    const polyline = L.polyline(route.coords, { color: route.color, weight: 6, opacity: 0.9, lineCap: 'round', lineJoin: 'round' }).bindPopup(popupContent);
-                    mapLayers[key] = polyline; 
+        function handleStarOut(e) {
+            const star = e.currentTarget;
+            const category = star.parentElement.dataset.category;
+            const savedValue = selectedRatings[category];
+            updateStars(category, savedValue); // Reset to saved state
+        }
 
-                    if (key.startsWith("tren")) {
-                        polyline.addTo(trenLayers);
-                    } else {
-                        polyline.addTo(macroLayers);
+        function updateStars(category, value, isHovering = false) {
+            const stars = document.querySelectorAll(`#ratings-container [data-category="${category}"] .rating-star`);
+            stars.forEach(star => {
+                const starValue = parseInt(star.dataset.value);
+                if (starValue <= value) {
+                    star.classList.add('filled');
+                    if (isHovering) {
+                        star.style.fill = 'var(--secondary)'; // Ensure hover fill
                     }
-                });
+                } else {
+                    star.classList.remove('filled');
+                    star.style.fill = 'none'; // Ensure no fill
+                }
+            });
+        }
 
-                const overlayMaps = {
-                    "<span style='font-weight: bold;'>Mi Tren</span>": trenLayers,
-                    "<span style='font-weight: bold;'>Mi Macro</span>": macroLayers
-                };
-                
-                trenLayers.addTo(map);
-                macroLayers.addTo(map);
+        function setupRatingFormListeners() {
+            const form = document.getElementById('rating-form');
+            const requiredInputs = form.querySelectorAll('[required]');
+            
+            requiredInputs.forEach(input => {
+                input.addEventListener('input', validateForm);
+            });
+        }
 
-                L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
-                
-                if (fullRankingList.length > 0) {
-                    updateMapPopups(fullRankingList);
+        function validateForm() {
+            const form = document.getElementById('rating-form');
+            const submitButton = document.getElementById('submit-button');
+            const submitText = document.getElementById('submit-text');
+
+            // 1. Validar inputs requeridos (transporte y ruta)
+            const transportType = document.getElementById('transportType').value;
+            const routeLine = document.getElementById('routeLine').value;
+            const inputsValid = transportType !== "" && routeLine !== "";
+
+            // 2. Validar que todas las categorías de estrellas tengan al menos 1
+            let allStarsRated = true;
+            for (const category in selectedRatings) {
+                if (selectedRatings[category] === 0) {
+                    allStarsRated = false;
+                    break;
                 }
             }
 
-            // --- Inicialización General ---
-            const initApp = () => {
-                const welcomeScreen = document.getElementById('welcome-animation');
-                if (welcomeScreen) {
-                    setTimeout(() => {
-                        welcomeScreen.classList.add('hidden');
-                    }, 5000);
+            // 3. Habilitar o deshabilitar el botón
+            if (inputsValid && allStarsRated) {
+                submitButton.disabled = false;
+                submitText.innerText = 'Enviar Calificación';
+            } else {
+                submitButton.disabled = true;
+                if (!inputsValid) {
+                    submitText.innerText = 'Completa los datos del viaje';
+                } else if (!allStarsRated) {
+                    submitText.innerText = 'Califica todos los aspectos';
                 }
+            }
+        }
 
-                resetCurrentRatings();
-                const container = document.getElementById('ratings-container');
-                container.innerHTML = RATING_INPUT_CATEGORIES.map(cat => renderRatingComponent(cat.key, cat.name)).join('');
+        function handleRatingSubmit(e) {
+            e.preventDefault();
+            const button = document.getElementById('submit-button');
+            const spinner = document.getElementById('submit-spinner');
+            const statusMessage = document.getElementById('status-message');
+            const form = document.getElementById('rating-form');
 
-                populateBusRoutes();
-                
-                updateRanking(allCommunityRatings);
-                updateComments(allCommunityRatings);
-                renderAnalyticsCharts(); // Renderizar gráficos al inicio
-                
-                switchTab('sesion');
+            // Simular carga
+            button.disabled = true;
+            spinner.classList.remove('hidden');
+            statusMessage.classList.add('hidden');
 
-                updateNavState(); // << AÑADIDO: Aplicar estado de pestañas al inicio
-                lucide.createIcons();
+            setTimeout(() => {
+                // Simulación de éxito
+                button.disabled = false;
+                spinner.classList.add('hidden');
                 
-                const transportTypeEl = document.getElementById('transportType');
-                const routeLineEl = document.getElementById('routeLine');
-                const suggestionsContainer = document.getElementById('autocomplete-suggestions');
+                statusMessage.innerText = '¡Calificación enviada con éxito! Gracias por tu opinión.';
+                statusMessage.classList.remove('hidden', 'text-red-600', 'bg-red-100');
+                statusMessage.classList.add('text-green-600', 'bg-green-100');
 
-                transportTypeEl.addEventListener('change', (e) => {
-                    const isBus = e.target.value.startsWith('bus-');
-                    routeLineEl.disabled = !isBus;
-                     if (!isBus) {
-                         routeLineEl.value = e.target.value.split('-').pop().toUpperCase();
-                    } else {
-                         routeLineEl.value = '';
-                         routeLineEl.placeholder = 'Ej: T01, C123...';
-                    }
-                     checkFormValidity();
-                });
-                
-                routeLineEl.addEventListener('input', () => {
-                    const transportType = transportTypeEl.value;
-                    const inputValue = routeLineEl.value.toLowerCase();
-                    suggestionsContainer.innerHTML = '';
+                // Resetear formulario
+                form.reset();
+                selectedRatings = {}; // Limpiar objeto de ratings
+                generateRatingFields(); // Regenerar estrellas
+                validateForm(); // Resetear estado del botón
+
+                // Ocultar mensaje después de 3 segundos
+                setTimeout(() => {
+                    statusMessage.classList.add('hidden');
+                }, 3000);
+
+            }, 2000);
+        }
+
+        // --- LÓGICA DE AUTOCOMPLETADO ---
+        function setupAutocomplete() {
+            const input = document.getElementById('routeLine');
+            const suggestionsContainer = document.getElementById('autocomplete-suggestions');
+
+            input.addEventListener('input', () => {
+                const query = input.value.toLowerCase();
+                if (query.length < 1) {
                     suggestionsContainer.classList.add('hidden');
-
-                    if (!transportType.startsWith('bus-') || inputValue.length === 0) {
-                        return;
-                    }
-
-                    const relevantRoutes = allBusRoutes[transportType];
-                    const filteredRoutes = relevantRoutes.filter(route => 
-                        route.id.toLowerCase().startsWith(inputValue) || 
-                        route.name.toLowerCase().includes(inputValue)
-                    ).slice(0, 5);
-
-                    if (filteredRoutes.length > 0) {
-                        filteredRoutes.forEach(route => {
-                            const suggestionDiv = document.createElement('div');
-                            suggestionDiv.textContent = `${route.id} - ${route.name}`;
-                            suggestionDiv.className = 'autocomplete-suggestion';
-                            suggestionDiv.onclick = () => {
-                                routeLineEl.value = route.id;
-                                suggestionsContainer.innerHTML = '';
-                                suggestionsContainer.classList.add('hidden');
-                                checkFormValidity();
-                            };
-                            suggestionsContainer.appendChild(suggestionDiv);
-                        });
-                        suggestionsContainer.classList.remove('hidden');
-                    }
-                });
-                
-                document.addEventListener('click', (e) => {
-                    if (e.target !== routeLineEl) {
-                        suggestionsContainer.classList.add('hidden');
-                    }
-                });
-
-                routeLineEl.addEventListener('input', checkFormValidity);
-                
-                const routeModal = document.getElementById('route-modal');
-                if(routeModal) {
-                    routeModal.addEventListener('click', (e) => {
-                        if (e.target === routeModal) {
-                            closeRouteModal();
-                        }
-                    });
+                    return;
                 }
+
+                const filteredRoutes = allRoutes.filter(route => 
+                    route.toLowerCase().includes(query)
+                );
+
+                if (filteredRoutes.length === 0) {
+                    suggestionsContainer.classList.add('hidden');
+                    return;
+                }
+
+                suggestionsContainer.innerHTML = '';
+                filteredRoutes.slice(0, 5).forEach(route => { // Limitar a 5 sugerencias
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.className = 'autocomplete-suggestion';
+                    suggestionDiv.innerText = route;
+                    suggestionDiv.addEventListener('click', () => {
+                        input.value = route;
+                        suggestionsContainer.classList.add('hidden');
+                        validateForm(); // Validar formulario al seleccionar
+                    });
+                    suggestionsContainer.appendChild(suggestionDiv);
+                });
+
+                suggestionsContainer.classList.remove('hidden');
+            });
+
+            // Ocultar sugerencias si se hace clic fuera
+            document.addEventListener('click', (e) => {
+                if (e.target !== input) {
+                    suggestionsContainer.classList.add('hidden');
+                }
+            });
+        }
+
+
+        // --- LÓGICA DE RANKING ---
+        function filterAndDisplayRanking(filter) {
+            // Actualizar botones de filtro
+            document.querySelectorAll('.ranking-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const container = document.getElementById('ranking-container');
+            container.innerHTML = ''; // Limpiar
+
+            const filteredData = (filter === 'all') 
+                ? demoRankingData 
+                : demoRankingData.filter(item => item.type === filter || (filter === 'bus-t' && item.type.startsWith('bus-t')) || (filter === 'bus-c' && item.type.startsWith('bus-c')) || (filter === 'bus-a' && item.type.startsWith('bus-a')) || (filter === 'tren' && item.type.startsWith('tren')) || (filter === 'macro' && item.type.startsWith('macro')));
+            
+            // Ordenar de mejor a peor
+            filteredData.sort((a, b) => b.rating - a.rating);
+
+            if (filteredData.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500 p-4">No hay datos para esta categoría.</p>';
+                return;
+            }
+
+            filteredData.forEach((item, index) => {
+                const rank = index + 1;
+                const starPercentage = (item.rating / 5) * 100;
+
+                let
+                 bgColor, borderColor, textColor;
+                if (rank === 1) {
+                    bgColor = 'bg-gradient-to-r from-amber-100 to-yellow-50'; borderColor = 'border-yellow-400'; textColor = 'text-yellow-700';
+                } else if (rank === 2) {
+                    bgColor = 'bg-gradient-to-r from-gray-100 to-slate-50'; borderColor = 'border-gray-300'; textColor = 'text-gray-600';
+                } else if (rank === 3) {
+                    bgColor = 'bg-gradient-to-r from-orange-100 to-amber-50'; borderColor = 'border-orange-300'; textColor = 'text-orange-700';
+                } else if (item.rating < 3) {
+                    bgColor = 'bg-red-50'; borderColor = 'border-red-200'; textColor = 'text-red-700';
+                } else {
+                    bgColor = 'bg-white'; borderColor = 'border-gray-200'; textColor = 'text-gray-800';
+                }
+
+                const itemHTML = `
+                    <div class="flex items-center gap-4 p-4 ${bgColor} rounded-xl border ${borderColor} shadow-sm">
+                        <div class="flex-none w-10 h-10 rounded-full ${bgColor} border ${borderColor} flex items-center justify-center font-bold text-lg ${textColor}">
+                            ${rank}
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-lg ${textColor}">${item.route}</h4>
+                            <span class="text-sm font-medium text-gray-500">${item.votes} calificaciones</span>
+                        </div>
+                        <div class="text-right">
+                            <div class="flex items-center justify-end gap-1 font-bold text-xl ${textColor}">
+                                <i data-lucide="star" class="w-5 h-5 text-yellow-500 fill-current"></i>
+                                ${item.rating.toFixed(1)}
+                            </div>
+                            <!-- Barra de estrellas -->
+                            <div class="w-24 h-2 bg-gray-200 rounded-full mt-1 overflow-hidden">
+                                <div class="h-full bg-yellow-400" style="width: ${starPercentage}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += itemHTML;
+            });
+            lucide.createIcons(); // Recargar íconos
+        }
+
+        // --- LÓGICA DE COMENTARIOS ---
+        function filterAndDisplayComments(filter) {
+            // Actualizar botones de filtro
+            document.querySelectorAll('.comment-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const container = document.getElementById('comments-container');
+            container.innerHTML = ''; // Limpiar
+
+            const filteredData = (filter === 'all')
+                ? demoCommentsData
+                : demoCommentsData.filter(item => item.type === filter || (filter === 'bus-t' && item.type.startsWith('bus-t')) || (filter === 'bus-c' && item.type.startsWith('bus-c')) || (filter === 'bus-a' && item.type.startsWith('bus-a')) || (filter === 'tren' && item.type.startsWith('tren')) || (filter === 'macro' && item.type.startsWith('macro')));
+            
+            // Ordenar por más reciente (en este demo, por ID)
+            filteredData.sort((a, b) => b.id - a.id);
+
+            if (filteredData.length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-500 p-4">No hay comentarios para esta categoría.</p>';
+                return;
+            }
+
+            filteredData.forEach(item => {
+                const itemHTML = `
+                    <div class="p-5 bg-white rounded-xl border border-gray-100 shadow-sm">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-bold text-teal-700">${item.route}</h4>
+                            <span class="text-xs text-gray-400">${item.time}</span>
+                        </div>
+                        <div class="flex items-center gap-1 mb-3">
+                            ${[1, 2, 3, 4, 5].map(star => `
+                                <i data-lucide="star" class="w-4 h-4 ${star <= item.rating ? 'text-yellow-500 fill-current' : 'text-gray-300'}"></i>
+                            `).join('')}
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">${item.comment}</p>
+                    </div>
+                `;
+                container.innerHTML += itemHTML;
+            });
+            lucide.createIcons(); // Recargar íconos
+        }
+
+
+        // --- LÓGICA DEL MAPA ---
+        function initMap() {
+            // Prevenir reinicialización
+            if (leafletMap) {
+                leafletMap.invalidateSize();
+                return;
+            }
+            
+            // Coordenadas de GDL
+            const GDL_COORDS = [20.659698, -103.349609];
+            leafletMap = L.map('map').setView(GDL_COORDS, 12);
+
+            // Capa de mosaico de OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(leafletMap);
+
+            // --- Demo de Rutas (datos ficticios de coordenadas) ---
+            // Mi Tren L1 (Rojo)
+            const trenL1 = [[20.730, -103.350], [20.715, -103.352], [20.690, -103.348], [20.670, -103.347], [20.650, -103.349], [20.620, -103.351], [20.590, -103.353]];
+            L.polyline(trenL1, { color: '#E53E3E', weight: 5 }).addTo(leafletMap)
+                .bindPopup('<h4>Mi Tren - Línea 1</h4><p>Calificación: 4.2 / 5</p>');
+
+            // Mi Tren L2 (Verde)
+            const trenL2 = [[20.675, -103.380], [20.676, -103.360], [20.675, -103.347], [20.674, -103.320], [20.673, -103.300]];
+            L.polyline(trenL2, { color: '#38A169', weight: 5 }).addTo(leafletMap)
+                .bindPopup('<h4>Mi Tren - Línea 2</h4><p>Calificación: 2.1 / 5</p>');
+
+            // Mi Tren L3 (Rosa)
+            const trenL3 = [[20.720, -103.385], [20.690, -103.370], [20.675, -103.347], [20.660, -103.310], [20.640, -103.290]];
+            L.polyline(trenL3, { color: '#D53F8C', weight: 5 }).addTo(leafletMap)
+                .bindPopup('<h4>Mi Tren - Línea 3</h4><p>Calificación: 4.8 / 5</p>');
+
+            // Mi Macro Calzada (Azul)
+            const macroCalzada = [[20.700, -103.330], [20.680, -103.331], [20.660, -103.330], [20.640, -103.329], [20.620, -103.330]];
+            L.polyline(macroCalzada, { color: '#3182CE', weight: 5, dashArray: '10, 5' }).addTo(leafletMap)
+                .bindPopup('<h4>Mi Macro Calzada</h4><p>Calificación: 3.2 / 5</p>');
+
+            // Ajustar el tamaño del mapa (bug común de Leaflet en pestañas)
+            setTimeout(() => {
+                leafletMap.invalidateSize();
+            }, 100);
+        }
+
+        // --- LÓGICA DE GRÁFICAS ---
+        function initAnalytics() {
+            // Prevenir reinicialización
+            if (ratingsChart) {
+                return;
+            }
+
+            const ctx = document.getElementById('ratingsChart').getContext('2d');
+            
+            // Datos de demo para la gráfica
+            const data = {
+                labels: ratingCategories.map(cat => cat.name),
+                datasets: [{
+                    label: 'Calificación Promedio (de 5)',
+                    data: [4.2, 3.1, 3.8, 4.5, 3.9, 2.8], // Datos ficticios
+                    backgroundColor: [
+                        'rgba(20, 184, 166, 0.6)',
+                        'rgba(245, 158, 11, 0.6)',
+                        'rgba(59, 130, 246, 0.6)',
+                        'rgba(239, 68, 68, 0.6)',
+                        'rgba(139, 92, 246, 0.6)',
+                        'rgba(217, 70, 239, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(20, 184, 166, 1)',
+                        'rgba(245, 158, 11, 1)',
+                        'rgba(59, 130, 246, 1)',
+                        'rgba(239, 68, 68, 1)',
+                        'rgba(139, 92, 246, 1)',
+                        'rgba(217, 70, 239, 1)'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 8,
+                }]
             };
 
-            initApp();
-        });
+            ratingsChart = new Chart(ctx, {
+                type: 'bar', // Tipo de gráfica
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y', // Hacerla horizontal
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 5, // El máximo es 5 estrellas
+                            grid: {
+                                display: true,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                font: {
+                                    family: "'Poppins', sans-serif"
+                                }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    family: "'Poppins', sans-serif"
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: '#1f2937',
+                            titleFont: {
+                                family: "'Poppins', sans-serif",
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                family: "'Poppins', sans-serif"
+                            },
+                            padding: 10,
+                            cornerRadius: 8
+                        }
+                    }
+                }
+            });
+        }
+
     </script>
 </body>
 </html>
